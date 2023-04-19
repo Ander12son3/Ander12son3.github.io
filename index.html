@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario de contacto</title>
+
+        <link rel="stylesheet" href="css/estilos.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+
+        <script src="js/jquery-3.2.1.js"></script>
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+        <section class="form_wrap">
+            <section class="contact_info">
+                <section class="info_title">
+                    <span class="fa fa-user-circle"></span>
+                    <h2>INFORMACION <br> DE CONTACTO</h2>
+                </section>
+                <section class="info_item">
+                    <p><span class="fa fa-envelope"></span> admoaplh@gmail.com</p>
+                    <p><span class="fa fa-mobile"></span> 3124120841</p>
+                </section>
+            </section>
+            <form action="enviar.php" method="post" class="form_contact">
+                <h2>Envía un mensaje</h2>
+                <div class="user_info">
+                    <label for="names">Nombres *</label>
+                    <input type="text" name="nombre" id="names" required>
+
+                    <label for="phone">Telefono / Celular</label>
+                    <input type="text" name="telefono" id="phone">
+
+                    <label for="email">Correo electrónico *</label>
+                    <input type="text" name="correo" id="email" required>
+
+                    <label for="mensaje">Mensaje *</label>
+                    <textarea id="mensaje" name="mensaje" required></textarea>
+
+                    <input type="submit" value="Enviar mensaje" id="btnSend">
+                </div>
+            </form>
+        </section>
+    </body>
+</html>
