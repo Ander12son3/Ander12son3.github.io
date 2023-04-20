@@ -1,9 +1,9 @@
 $(document).ready(function(){
-    $('#btnSend').click(function(){
+    $('#button').click(function(){
         var errores = '';
         // Validando nombre ==================================
         if ( $('#names').val() == '' ) {
-            errores += '<p>Escriba un nombre</p>';
+            errores += '<p>Escribe tu nombre</p>';
             $('#names').css("border-bottom-color", "#F14B4B")
         } else {
             $('#names').css("border-bottom-color", "#d1d1d1")
@@ -15,6 +15,14 @@ $(document).ready(function(){
             $('#email').css("border-bottom-color", "#F14B4B")
         } else {
             $('#email').css("border-bottom-color", "#d1d1d1")
+        }
+
+        // Validando correo ==================================
+        if ( $('#tipo').val() == '' ) {
+            errores += '<p>Escriba el tipo de mansaje</p>';
+            $('#tipo').css("border-bottom-color", "#F14B4B")
+        } else {
+            $('#tipo').css("border-bottom-color", "#d1d1d1")
         }
 
         // Validando mensaje =================================

@@ -111,7 +111,7 @@ body {
 
 .form_contact {
     width: 62%;
-    padding: 30px 40px;
+    padding: 15px 40px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -119,7 +119,7 @@ body {
     font-size: 25px;
     font-weight: 600px;
     color: #303030;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .user_info {
@@ -153,10 +153,10 @@ body {
     max-height: 90px;
 }
 
-.form_contact input[type="button"] {
+.form_contact input[type="submit"] {
     width: 180px;
     background: #4091ec;
-    padding: 10px;
+    padding: 5px 10px;
     border: 1px solid transparent;
     border-radius: 10px;
 
@@ -170,7 +170,7 @@ body {
     transition: all 0.4s;
 }
 
-.form_contact input[type="button"]:hover {
+.form_contact input[type="submit"]:hover {
     background: #fff;
     border: 1px solid #4091ec;
     color: #4091ec;
@@ -240,33 +240,4 @@ body {
     cursor: pointer;
 
     float: right;
-}
-
-/* Mensaje exitoso */
-
-.mensaje-exito {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.mensaje-exito h1 {
-    font-size: 35px;
-    display: block;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.mensaje-exito a {
-    display: block;
-    padding: 10px 30px;
-    background: #4091ec;
-    text-decoration: none;
-    color: #fff;
-}
-
-.mensaje-exito a:hover {
-    background: #3371b6;
 }

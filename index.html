@@ -1,47 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Formulario de contacto</title>
 
-        <link rel="stylesheet" href="css/estilos.css">
-        <link rel="stylesheet" href="css/font-awesome.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de contacto</title>
 
-        <script src="js/jquery-3.2.1.js"></script>
-        <script src="js/script.js"></script>
-    </head>
-    <body>
-        <section class="form_wrap">
-            <section class="contact_info">
-                <section class="info_title">
-                    <span class="fa fa-user-circle"></span>
-                    <h2>INFORMACION <br> DE CONTACTO</h2>
-                </section>
-                <section class="info_item">
-                    <p><span class="fa fa-envelope"></span> admoaplh@gmail.com</p>
-                    <p><span class="fa fa-mobile"></span> 3124120841</p>
-                </section>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <section class="form_wrap">
+        <section class="contact_info">
+            <section class="info_title">
+                <span class="fa fa-user-circle"></span>
+                <h2>INFORMACION <br> DE CONTACTO</h2>
             </section>
-            <form action="enviar.php" method="post" class="form_contact">
-                <h2>Envía un mensaje</h2>
-                <div class="user_info">
-                    <label for="names">Nombres *</label>
-                    <input type="text" name="nombre" id="names" required>
-
-                    <label for="phone">Telefono / Celular</label>
-                    <input type="text" name="telefono" id="phone">
-
-                    <label for="email">Correo electrónico *</label>
-                    <input type="text" name="correo" id="email" required>
-
-                    <label for="mensaje">Mensaje *</label>
-                    <textarea id="mensaje" name="mensaje" required></textarea>
-                    
-                    <input type="button" value="Enviar mensaje" id="btnSend">
-                </div>
-            </form>
+            <section class="info_item">
+                <p><span class="fa fa-envelope"></span> admoaplh@gmail.com</p>
+                <p><span class="fa fa-mobile"></span> 3124120841</p>
+            </section>
         </section>
-    </body>
+        <form id="form" action="" class="form_contact">
+            <h2>Envía un mensaje</h2>
+            <div class="user_info">
+                <label for="names">Nombres</label>
+                <input type="text" name="name" id="names" required>
+
+                <label for="names">Apellidos</label>
+                <input type="text" name="last" id="apellido" placeholder="Campo opcional">
+
+                <label for="phone">Telefono / Celular</label>
+                <input type="text" name="ph" id="phone" placeholder="Campo opcional">
+
+                <label for="email">Correo electrónico</label>
+                <input type="text" name="crr" id="email" required>
+
+                <label for="names">Tipo de mensaje</label>
+                <input type="text" name="type" id="tipo" placeholder="PQRS, agradecimiento, etc." required>
+
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mp" required></textarea>
+
+                <input type="submit" id="button" value="Enviar mensaje" >
+            </div>
+        </form>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+        </script>
+
+        <script type="text/javascript">
+            emailjs.init('18zcF5jIQA32nJh2X')
+        </script>
+    </section>
+</body>
+
+<script>
+    const btn = document.getElementById('button');
+
+    document.getElementById('form')
+        .addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            btn.value = 'Enviando...';
+
+            const serviceID = 'default_service';
+            const templateID = 'template_hevvx6i';
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    btn.value = 'Enviar mensaje';
+                    alert('Mansaje enviado correctamente!');
+                }, (err) => {
+                    btn.value = 'Enviar mensaje';
+                    alert(JSON.stringify(err));
+                });
+        });
+</script>
+
 </html>
